@@ -128,6 +128,13 @@ public class Menu {
 				long end2 = System.nanoTime();
 				long total2 = end2 - start2;
 				displayRunTime(total2, "Integrated Java Sort");
+				//Checks what format the time should be printed in
+//				if(total * Math.pow(10, -6) > 1000) { //If milliseconds > 1000 print in seconds
+//					System.out.println("\nTotal runtime of Coded HeapSort is: " + (total * Math.pow(10,-9)) + " seconds");
+//					System.out.println("Total runtime of Integrated Java Sort is: " + (total2 * Math.pow(10,-9)) + " seconds");
+//				}else
+//					System.out.println("\nTotal runtime of Coded HeapSort is: " + (total * Math.pow(10,-6)) + " milliseconds");
+//					System.out.println("Total runtime of Integrated Java Sort is: " + (total2 * Math.pow(10,-6)) + " milliseconds");
 				printMenu();
 				break;
 			//Quit the program
@@ -177,8 +184,10 @@ public class Menu {
 	public static void displayRunTime(long total, String sol) {
 		if(total * Math.pow(10, -6) > 1000) { //If milliseconds > 1000 print in seconds
 			System.out.println("Total runtime of " + sol + " is: " + (total * Math.pow(10,-9)) + " seconds");
+			System.out.println("Double Time: " + (Double)(total * Math.pow(10,-9)));
 		}else
 			System.out.println("Total runtime of " + sol + " is: " + (total * Math.pow(10,-6)) + " milliseconds");
+			System.out.println("Double Time: " + (Double)(total * Math.pow(10,-6)));
 	}
 	
 	static void printArray(int[] arr) {
